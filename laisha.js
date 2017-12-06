@@ -1,22 +1,10 @@
+drawGrass();
+fillInGrass();
+drawAllButterflies();
 //draw grass
 function drawGrass() {
   penUp();
-  moveTo(0, 260);
-  arcRight(45, 10);
-  penDown();
-  for (var i = 0; i < 4; i++) {
-    penRGB(13, 229, 100, 1);
-    penWidth(5);
-    moveForward(25);
-    turnTo(180);
-    arcRight(45, 25);
-    turnLeft(180);
-  }
-}
-//draw grass backwards
-function drawGrassBackwards() {
-  penUp();
-  moveTo(316, 260);
+  moveTo(345, 260);
   arcLeft(45, 25);
   penDown();
   for (var i = 0; i < 35; i++) {
@@ -31,26 +19,21 @@ function drawGrassBackwards() {
 //fill in grass
 function fillInGrass() {
   penUp();
-  moveTo(0, 347);
+  moveTo(0, 360);
   penDown();
   turnTo(90);
   penWidth(250);
   moveForward(310);
-  penDown();
+  penUp();
 }
-drawGrass();
-drawGrassBackwards();
-fillInGrass();
 //positionButterfly
 function positionButterfly(positionx, positiony) {
   penUp();
   moveTo(positionx, positiony);
-  penDown();
 }
-positionButterfly(randomNumber(20, 285), randomNumber(195, 35));
 //Butterfly Abdomen
-drawAbdomen();
 function drawAbdomen() {
+  penDown();
   turnLeft(90);
   penRGB(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255), 1);
   penWidth(6);
@@ -61,8 +44,10 @@ function drawAbdomen() {
     arcRight(45, 3);
     arcRight(45, 3);
   }
+  penUp();
 }
-function leftWing() {
+function drawLeftWing() {
+  penDown();
   penWidth(5);
   turnLeft(90);
   for (var i = 0; i < 3; i++) {
@@ -74,10 +59,11 @@ function leftWing() {
   }
   turnLeft(40);
   moveForward(5);
+  penUp();
 }
-leftWing();
 //transition to left antenna
 function drawLeftAntenna() {
+  penDown();
   turnLeft(90);
   arcRight(45, 3);
   turnLeft(90);
@@ -85,10 +71,11 @@ function drawLeftAntenna() {
   moveForward(13);
   turnRight(180);
   moveForward(13);
+  penUp();
 }
-drawLeftAntenna();
 //transition to right antenna
 function drawRightAntenna() {
+  penDown();
   turnLeft(90);
   for (var i = 0; i < 2; i++) {
     arcRight(45, 3);
@@ -97,9 +84,10 @@ function drawRightAntenna() {
   moveForward(13);
   turnRight(180);
   moveForward(13);
+  penUp();
 }
-drawRightAntenna();
 function drawRightWing() {
+  penDown();
   //transition to right wing 
   turnLeft(90);
   penWidth(5);
@@ -116,8 +104,18 @@ function drawRightWing() {
   }
   turnRight(40);
   moveForward(5);
+  penUp();
 }
-drawRightWing();
-//seeing
-penUp();
-moveTo(262, 162);
+function drawButterfly() {
+  positionButterfly(randomNumber(20, 285), randomNumber(195, 35));
+  drawAbdomen();
+  drawLeftWing();
+  drawLeftAntenna();
+  drawRightAntenna();
+  drawRightWing();
+}
+function drawAllButterflies() {
+  for (var i = 0; i < 4; i++) {
+    drawButterfly();
+  }
+}
