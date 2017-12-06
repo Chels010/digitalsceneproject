@@ -1,22 +1,31 @@
 hide();
 penUp();
-moveTo(randomNumber(35, 285), 450);
 drawAllTrees();
 function drawAllTrees() {
-  drawTree();
+  for (var i = 0; i < 3; i++) {
+    penUp();
+    turnTo(0);
+    moveTo(randomNumber(35, 285), randomNumber(
+    350, 450));
+    drawTree();
+  }
 }
 //draws a tree
 function drawTree() {
   penDown();
-  moveForward(25);
+  penWidth(15);
+  penColor(rgb(165, 42, 42));
+  moveForward(50);
   turnRight(90);
+  penColor("green");
+  penWidth(26);
   drawBigTriangle();
   penUp();
-  moveTo(156, 165);
+  move(-5, -45);
   penDown();
   drawLittleTriangle();
 }
-//makes a big triangle, "base of the tree"
+//draws a big triangle, "base of the tree"
 function drawBigTriangle() {
   moveForward(50);
   turnLeft(135);
@@ -25,14 +34,19 @@ function drawBigTriangle() {
   moveForward(75);
   turnLeft(135);
   moveForward(55);
+  penUp();
+  move(0, -20);
+  penColor("green");
+  penDown();
+  dot(23);
 }
-//makes a little triangle, "top of the tree"
+//draws a little triangle, the "top of the tree"
 function drawLittleTriangle() {
-  moveForward(40);
+  moveForward(35);
   turnLeft(135);
-  moveForward(60);
-  turnLeft(95);
-  moveForward(55);
-  turnLeft(130);
   moveForward(45);
+  turnLeft(90);
+  moveForward(45);
+  turnLeft(135);
+  moveForward(35);
 }
