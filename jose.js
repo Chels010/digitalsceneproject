@@ -4,6 +4,7 @@ function drawSunset() {
   drawSun();
   drawCloud1(randomNumber(20, 280), randomNumber(20, 150));
   drawCloud2(randomNumber(20, 280), randomNumber(20, 150));
+  drawGrass();
 }
 function drawBackground() {
   //draws the background
@@ -26,9 +27,9 @@ function drawBackground() {
 function drawSun() {
   //draws the full sun
   penRGB(253, 184, 53, 1);
-  dot(80);
+  dot(120);
   penUp();
-  moveTo(160, 290);
+  moveTo(160, 240);
   penDown();
   //removeothersideofthecircle
   moveBackward(5);
