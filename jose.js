@@ -27,6 +27,7 @@ function drawBackground() {
 function drawSun() {
   //draws the full sun
   penRGB(253, 184, 53, 1);
+   moveForward(60);
   dot(120);
   penUp();
   moveTo(160, 240);
