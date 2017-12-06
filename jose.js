@@ -79,3 +79,4 @@ function drawCloud2(xAxis, yAxis) {
   turnRight(90);
   arcLeft(90, 25);
   arcLeft(90, 25);
+}
