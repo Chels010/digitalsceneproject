@@ -69,7 +69,7 @@ function leftWing() {
     arcRight(45, 10);
   }
   turnLeft(180);
-  for (var i = 0; i < 6; i++) {
+  for (var y = 0; y < 6; y++) {
     arcRight(45, 5);
   }
   turnLeft(40);
@@ -111,7 +111,7 @@ function drawRightWing() {
     arcLeft(45, 10);
   }
   turnRight(180);
-  for (var i = 0; i < 6; i++) {
+  for (var x = 0; x < 6; x++) {
     arcLeft(45, 5);
   }
   turnRight(40);
