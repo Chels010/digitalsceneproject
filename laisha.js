@@ -1,7 +1,6 @@
 drawGrass();
 fillInGrass();
 drawAllButterflies();
-//draw grass
 function drawGrass() {
   penUp();
   moveTo(345, 260);
@@ -16,7 +15,6 @@ function drawGrass() {
     turnRight(180);
   }
 }
-//fill in grass
 function fillInGrass() {
   penUp();
   moveTo(0, 360);
@@ -86,9 +84,9 @@ function drawRightAntenna() {
   moveForward(13);
   penUp();
 }
+//transition to right wing 
 function drawRightWing() {
   penDown();
-  //transition to right wing 
   turnLeft(90);
   penWidth(5);
   arcRight(65, 3);
