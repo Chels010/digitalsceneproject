@@ -86,7 +86,7 @@ function drawGrass() {
   moveTo(345, 260);
   arcLeft(45, 25);
   penDown();
-  for (var i = 0; i < 35; i++) {
+  for (var i = 0; i < 45; i++) {
     penRGB(13, 229, 100, 1);
     penWidth(5);
     moveForward(25);
@@ -101,7 +101,7 @@ function fillInGrass() {
   moveTo(0, 360);
   penDown();
   turnTo(90);
-  penWidth(250);
+  penWidth(180);
   moveForward(310);
   penUp();
 }
