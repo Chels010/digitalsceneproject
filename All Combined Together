@@ -8,7 +8,7 @@ drawAllBirds();
 //Next 5 functions were made by Jose
 function drawSky() {
   drawBackground();
-  drawSun();
+  drawSun(randomNumber(160, 10));
   drawCloud1(randomNumber(20, 280), randomNumber(20, 150));
   drawCloud2(randomNumber(20, 280), randomNumber(20, 150));
 }
@@ -32,10 +32,10 @@ function drawBackground() {
   moveTo(160, 290);
 }
 
-function drawSun() {
+function drawSun(location) {
   //draws the full sun
   penRGB(253, 184, 53, 1);
-  moveForward(60);
+  moveForward(location);
   dot(120);
   penUp();
   moveTo(160, 240);
@@ -202,7 +202,7 @@ function drawButterfly() {
 }
 
 function drawAllButterflies() {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 3; i++) {
     drawButterfly();
   }
 }
@@ -210,7 +210,7 @@ function drawAllButterflies() {
 //the next 7 functions were made by Chelsea
 //draws numerous birds based on the number inserted in the loop
 function drawAllBirds() {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 2; i++) {
     moveTo(randomNumber(20, 285), randomNumber(10, 120));
     penWidth(5);
     penColor("black");
