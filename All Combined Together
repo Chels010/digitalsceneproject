@@ -1,16 +1,15 @@
-hide();
-penUp();
 drawAllTrees();
-penUp();
 drawAllBirds();
 
+//the next 7 functions were made by Chelsea
 //draws numerous birds based on the number inserted in the loop
 function drawAllBirds() {
   for (var i = 0; i < 4; i++) {
     moveTo(randomNumber(20, 285), randomNumber(10, 120));
     penWidth(5);
     penColor("black");
-    drawBird(randomNumber(30, 60));
+    drawBird(randomNumber(15, 60));
+    hide();
   }
 }
 
@@ -37,6 +36,7 @@ function drawTree() {
   move(-8, -45);
   penDown();
   drawLittleTriangle(45);
+  penUp();
 }
 
 //draws a big triangle, "base of the tree"
